@@ -1,0 +1,53 @@
+<%- include('blocks/header', {bot:bot, user: user, auth: auth}) %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/>
+<style>
+.ll {
+  border-radius: 15px 50px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  height: 10px;
+  background-color: <%= ran.color %>;
+  }
+  .kk {
+    border-radius: 15px;
+  background: #73AD21;
+  padding: 20px;
+  background-size: 25 25;
+  }
+</style>
+<div class="jumbotron">
+    <div class="col-sm-8 mx-auto">
+      <h3><% if (user.avatar) { %><img class="img-fluid img-thumbnail" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=2048"> <% } %><br><%= user.username %></h3>
+    </div>
+  </div>
+
+<h1 class="display-4">Rank card</h1>
+
+          <form action="/rank/<%=  user.id %>" method='post' id="form_MESSAGE">
+            <label> image </label>
+                 <br>  
+            <b>old image</b><br>
+<img src="<%= ran.image %>" height="50" weight="75"><br>
+            <input type="text" name="send_image" class="ll" placeholder="<%= ran.image %>" value="<%= ran.image %>">
+            <br>
+           <label>color</label> <br>
+  <input name="send_color" type="color" value="<%= ran.color %>"> 
+            
+</form>
+        <br><button type="submit" class="kk" id="form_BUTTON" style="color: #363636 !important;border-color: #ced4da !important;" onclick="send();">sumit</button>
+<br><br>
+<div id="pop"></div>
+
+
+    <script type="text/javascript">
+      function send() {
+        const alert = document.getElementById('pop');
+        alert.innerHTML = `<b>update Rank card...</b><br><img src="https://media.tenor.com/images/32772c6ecefc309aed00094da3340ed4/tenor.gif" height="30" weight="50">`;
+        alert.setAttribute('class', 'alert success');
+
+        setTimeout(() => {
+            document.getElementById('form_MESSAGE').submit();
+        }, 3000)
+      }
+    </script>
+<%- include('./blocks/footer') %>
