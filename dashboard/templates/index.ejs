@@ -1,0 +1,87 @@
+<%- include('blocks/header', {bot:bot, user: user, auth: auth}) %>
+<div class="jumbotron">
+    <div class="col-sm-8 mx-auto">
+      
+  <script>
+var messageBox = document.querySelector(".js-message");
+var btn = document.querySelector(".js-message-btn");
+var card = document.querySelector(".js-profile-card");
+var closeBtn = document.querySelectorAll(".js-message-close");
+
+btn.addEventListener("click", function(e) {
+  e.preventDefault();
+  card.classList.add("active");
+});
+
+closeBtn.forEach(function(element, index) {
+  console.log(element);
+  element.addEventListener("click", function(e) {
+    e.preventDefault();
+    card.classList.remove("active");
+  });
+});
+</script>
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.ma {
+  border: 6px blue;
+  width: 100%;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding: 50px 20px;
+  padding-top: 100px;
+  display: flex;
+  background-image: linear-gradient(-20deg, #ff000 0%, #0099ff 100%);
+  display: flex;           
+  background-image: linear-gradient(-20deg, #ff0000 0%, #0099ff 100%);    
+  }
+  .ka {
+  border: 6px blue;
+  background-size: auto;
+  min-height: 100vh;
+  padding: 50px 20px;
+  padding-top: 100px;
+  display: flex;
+  background-image: linear-gradient(-20deg, #0099ff 0%, #ff00ff 100%);
+  display: flex;           
+  background-image: linear-gradient(-20deg, #0099ff 0%, #ff00ff 100%);    
+  }
+  .hh {
+  border-radius: 50%;
+  }
+  .p {
+  border-left: 6px solid #0011ff;
+  background-color: #0099ff;
+}
+  p.round1 {
+    background-color: #00FFFF;
+  border: 2px solid #00FFFF;
+  border-radius: 5px;
+}
+  </style>
+     <div class="w3-animate-fading">
+  <center>
+    <img src="<%= bot.user.displayAvatarURL({format: "png", size: 2048}) %>" class="hh" height="225" weight="225">
+    <br>
+<h3><b><%= bot.user.tag %></b></h3>
+       </center>
+        </div>   
+      <div class="ka">
+        <center>
+          <h1><b>Build the best Discord Server!</h1></b><br>
+          <i>-help to me royal plus bot</i><br>
+          Configure moderation, leveling, Welcomer and much more with the most easy-to-use dashboard!<br><br>
+        <a href="https://discordapp.com/oauth2/authorize?client_id=674108575118786560&scope=bot&permissions=2146958847"><p class="round1"><img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-your-gaming-dude-rsps-wow-minecraft-and-maplestory-2.png" height="20" weight="20" class="hh"><b><font color="black">ADD BOT YOUR  SERVER</font></b></p></a><br><br>
+            <img src="https://cdn.glitch.com/e32f3eae-5efe-4199-8987-532b32c2cd95%2FPicsArt_03-08-01.46.33.png?v=1583655436649" height="212" weight="212"><br><br>
+          <p class="p"><b>Levels and XP in your Discord Server</b></p><br>
+            <i>Gamers love to grind. Use our leveling system to identify and reward the most active members of your community! Let them show off a cool customizable rank card and compete for the mighty first spot of your leaderboard!</i>
+                <img src="https://cdn.discordapp.com/attachments/632098744262721564/633640689955110912/nitro.gif" height="1" weight="1">
+          </div>
+        </center>
+        </div>
+      
+<div class="container">
+      <!-- Example row of columns -->
+       </div>
+<%- include ('./blocks/footer') %>
