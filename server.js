@@ -385,31 +385,5 @@ client.on('message', msg => {
   };
 });
 
-const bod_api = require("bodapi.js");
-const bod = new bod_api('uT3ZtT8HaMGxRnIF3Fd0meHGNPWx1w', client);
-
-// m is optional
-bod.on('posted', (m) => {
- console.log(m);
-})
-
-bod.on('error', e => {
-  console.log(`Error ${e}`);
-})
-bod.getStats("674108575118786560").then(stats => {
- console.log(stats)
-});
-const fetch = require ('node-fetch');
-const headers = {
-Authorization: "478ebee7-19ba-41d0-96a0-a15ff101469f"
-};
-const url = "https://fire-drawer-k33z08t88h.glitch.me/";
-fetch(url, {
-method: "POST",
-headers: headers,
-body: JSON.stringify({
-message: "Hiee"
-})
-}).then(rs => console.log(rs));
 
 client.login(process.env.TOKEN);
