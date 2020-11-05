@@ -1,5 +1,9 @@
 Discord.js bot ;-)
 
-![Op](https://b-o-d.cf/api/674108575118786560/servers.svg?color=0099ff)
-![Op](https://b-o-d.cf/api/674108575118786560/status.svg)
-Best discordjs bot
+Make sure enter your all bot info .env
+
+Now go to https://discord.com/developers/applications
+Select your application (bot) => OAuth2 => add Redirect enter your project url/callback
+Now save changes
+
+Now login discord working
