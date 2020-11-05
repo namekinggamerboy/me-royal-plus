@@ -85,14 +85,17 @@ module.exports = client => {
   }
 
   protocol = client.protocol;
-
-  client.callbackURL = `${protocol}me-royal-plus.glitch.me/callback`;
-  console.log(`Callback URL: ${client.callbackURL}`);
+ if(process.env.GLITCH){
+  client.callbackURL = `${protocol}${process.env.DORMANNAME}.glitch.me/callback`;
+ } else {
+ client.callbackURL = `${protocol}${process.env.DORMANNAME}/callback`;
+}
+ console.log(`Callback URL: ${client.callbackURL}`);
   passport.use(
     new Strategy(
       {
-        clientID: "674108575118786560",
-        clientSecret: "0yMpa5WCzQxHGNDIKwcDtg9q4wmlZb3N",
+        clientID: client.user.id,
+        clientSecret: process.env.BOTSECRET,
         callbackURL: client.callbackURL,
         scope: ["identify", "guilds"]
       },
@@ -106,9 +109,9 @@ module.exports = client => {
   // the `secret` is in fact a 'salt' for the data, and should not be shared publicly.
   app.use(
     session({
-      secret: "0yMpa5WCzQxHGNDIKwcDtg9q4wmlZb3N",
+      secret: process.env.BOTSECRET,
       resave: false,
-      saveUninitialized: false
+      saveUninitialized: flase
     })
   );
 
