@@ -111,7 +111,7 @@ module.exports = client => {
     session({
       secret: process.env.BOTSECRET,
       resave: false,
-      saveUninitialized: flase
+      saveUninitialized: false
     })
   );
 
@@ -120,7 +120,7 @@ module.exports = client => {
   app.use(passport.session());
 
   // The domain name used in various endpoints to link between pages.
-  app.locals.domain = "me-royal-plus.glitch.me";
+  app.locals.domain = client.callbackURL.replace("http://", "").replace("https://", "").replace("/callback", "");
 
   // The EJS templating engine gives us more power
   app.engine("html", require("ejs").renderFile);
