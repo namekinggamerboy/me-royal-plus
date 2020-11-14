@@ -395,7 +395,7 @@ console.log(err);
   app.get("/manage/:guildID", checkAuth, (req, res) => {
     const guild = client.guilds.get(req.params.guildID);
     if (!guild) return res.status(404);
-    const isManaged = guild.members.get(req.user.id).Haspermission("MANAGE_GUILD");
+    const isManaged = guild.members.get(req.user.id).hasPermission("MANAGE_GUILD");
     if (req.user.id === "596521432507219980") {
       console.log(`Admin bypass for managing server: ${req.params.guildID}`);
     } else if (!isManaged) {
