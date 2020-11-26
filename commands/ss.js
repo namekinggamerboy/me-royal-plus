@@ -3,12 +3,12 @@ const webshot = require('webshot');
 exports.run = async (client, message, args) => {
   var options = {
     screenSize: { 
-      width: 960, height: 1024
+      width: 1024, height: 720
     },
    shotSize: { 
-     width: 960, height: 'all'
+     width: 1024, height: 720
    }
-,
+,    
  onLoadFinished: {
     fn: function(status) {
       var tags = document.getElementsByTagName(this.tagToReplace);
