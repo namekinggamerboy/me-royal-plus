@@ -30,7 +30,7 @@
           <form action="/manage/<%= guild.id %>" method='post' id="form_MESSAGE">
             <label> PREFIX </label>
                                      
-            <input type="text" name="send_prefix" class="form-control" value="<%= config.prefix %>"><br>
+            <input type="text" name="send_prefix" class="form-control" value="<%= prefix %>"><br>
            <label>levelup message</label>
                                             <select class="form-control" name="send_levelup">
                                                 <% if(config.levelup === "true"){ %>  
