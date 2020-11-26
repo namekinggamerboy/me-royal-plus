@@ -508,9 +508,13 @@ let Image = Canvas.Image,
     return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
   }
 let bg = cards.image;
-let user = client.users.get('596521432507219980');
-let colorRank = cards.color;
-let color = colorRank;
+let user = {
+discriminator: "0001",
+username: "test",
+displayAvtarURL: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+};
+let colorRank = '#0099ff";
+let color = "#FF0000";
 let l = "14";
 let p = "4";
 let ran = cards;
@@ -577,7 +581,7 @@ let pos = p;
           ctx.strokeStyle = "#0099ff";
           ctx.stroke();
           ctx.clip();
-          ctx.drawImage(user.displayAvatarURL({ format: 'png', size: 512}), 85, 66, 150, 150);
+          ctx.drawImage(user.displayAvatarURL, 85, 66, 150, 150);
 res.writeHead(200, { "Content-Type": "image/png" });
   res.end(await Image.toBuffer(), "binary");
 });  
