@@ -513,7 +513,7 @@ discriminator: "0001",
 username: "test",
 displayAvtarURL: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 };
-let colorRank = '#0099ff";
+let colorRank = "#0099ff";
 let color = "#FF0000";
 let l = "14";
 let p = "4";
