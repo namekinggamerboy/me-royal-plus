@@ -1,6 +1,4 @@
 const db = require('quick.db');
-const send = require('quick.hook');
-db.createWebview(process.env.PASSWORD, process.env.PORT);
 const points = new db.table('POINTS');
 const levels = new db.table('LEVELS');
 const xpl = new db.table("TOTAL_POINTS");
