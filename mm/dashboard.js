@@ -357,13 +357,10 @@ module.exports = client => {
   app.post("/manage/:guildID", checkAuth, async (req, res) => {
     const guild = client.guilds.get(req.params.guildID);
     if (!guild) return res.status(404);
-    const isManaged =
-      guild && !!guild.member(req.user.id)
-        ? guild.member(req.user.id).permissions.has("MANAGE_GUILD")
-        : false;
+
     if (req.user.id === "596521432507219980") {
       console.log(`Admin bypass for managing server: ${req.params.guildID}`);
-    } else if (!isManaged) {
+    } else if (!guild.member(req.user.id).hasPermissions("MANAGE_GUILD")) {
       res.redirect("/");
     }
         let data = req.body;
@@ -404,7 +401,8 @@ console.log(err);
     res.render(path.resolve(`${templateDir}${path.sep}manage.ejs`), {
       bot: client,
       guild: guild,
-      config: config[req.params.guildID],
+      config: config[guild.id],
+ 	prefix: config[guild.id].prefix,
       user: req.user,
       auth: true
     });
