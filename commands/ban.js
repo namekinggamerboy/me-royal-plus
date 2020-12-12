@@ -47,7 +47,7 @@ exports.run = async (client, message, args, ops) => {
     }
   });
 
-  var embed = new Discord.RichEmbed()
+  var embed = new Discord.MessageEmbed()
     .setColor(0xFF2222)
     .setTitle("B A N")
     .setDescription(`🔨 ${BMember.user.tag} banned for reason \n**${BReason}**`);
