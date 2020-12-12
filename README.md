@@ -9,3 +9,7 @@ Now save changes
 Now login discord working
 
 < url > = project link
+
+
+**Support server link-
+https://discord.com/invite/KmngEup**
