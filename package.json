@@ -77,5 +77,8 @@
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "license": "MIT"
 }
