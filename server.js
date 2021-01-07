@@ -71,7 +71,7 @@ client.on('ready', async () => { //Startup
 client.on("disconnected", () => {
 	console.log("Disconnected from Discord");
 	console.log("Attempting to log in...");
-	client.login(process.env.TOKEN);
+	client.login(config.TOKEN);
 });
 
 client.on('guildCreate', guild => { // If the Bot was added on a server, proceed
@@ -384,4 +384,4 @@ client.on('message', msg => {
 });
 
 
-client.login(process.env.TOKEN);
+client.login(config.TOKEN);
