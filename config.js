@@ -1,6 +1,6 @@
-module.export = {
+module.exports = {
 TOKEN: "",
 BOTSECRET: "",
-GLITCH: "",
+GLITCH: false,
 DOMAINNAME: ""
 };
