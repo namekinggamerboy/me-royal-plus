@@ -2,10 +2,10 @@
 const url = require("url");
 const path = require("path");
 const fs = require("fs");
-const config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
+const config = JSON.parse(fs.readFileSync("../config.json", "utf8"));
 // Used for Permission Resolving...
 const Discord = require("discord.js");
-
+const mconfig = require("../config js");
 // Express Session
 const express = require("express");
 const app = express();
@@ -85,17 +85,17 @@ module.exports = client => {
   }
 
   protocol = client.protocol;
- if(process.env.GLITCH){
-  client.callbackURL = `${protocol}${process.env.DORMANNAME}.glitch.me/callback`;
+ if(mconfig.GLITCH){
+  client.callbackURL = `${protocol}${mconfig.DOMAINNAME}.glitch.me/callback`;
  } else {
- client.callbackURL = `${protocol}${process.env.DORMANNAME}/callback`;
+ client.callbackURL = `${protocol}${mconfig.DOMAINNAME}/callback`;
 }
  console.log(`Callback URL: ${client.callbackURL}`);
   passport.use(
     new Strategy(
       {
         clientID: client.user.id,
-        clientSecret: process.env.BOTSECRET,
+        clientSecret: mconfig.BOTSECRET,
         callbackURL: client.callbackURL,
         scope: ["identify", "guilds"]
       },
@@ -109,7 +109,7 @@ module.exports = client => {
   // the `secret` is in fact a 'salt' for the data, and should not be shared publicly.
   app.use(
     session({
-      secret: process.env.BOTSECRET,
+      secret: mconfig.BOTSECRET,
       resave: false,
       saveUninitialized: false
     })
