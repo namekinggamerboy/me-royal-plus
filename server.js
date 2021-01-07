@@ -6,6 +6,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({
   forceFetchUsers: true
 });
+const mconfig = require("./config.js");
 const fs = require('fs');
 try {
     var config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
@@ -71,7 +72,7 @@ client.on('ready', async () => { //Startup
 client.on("disconnected", () => {
 	console.log("Disconnected from Discord");
 	console.log("Attempting to log in...");
-	client.login(config.TOKEN);
+	client.login(mconfig.TOKEN);
 });
 
 client.on('guildCreate', guild => { // If the Bot was added on a server, proceed
@@ -384,4 +385,4 @@ client.on('message', msg => {
 });
 
 
-client.login(config.TOKEN);
+client.login(mconfig.TOKEN);
