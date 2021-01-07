@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({
   forceFetchUsers: true
 });
-const mconfig = require("./config.js");
+const mconfig = require("./main.json");
 const fs = require('fs');
 try {
     var config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
