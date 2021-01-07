@@ -5,7 +5,7 @@ const fs = require("fs");
 const config = JSON.parse(fs.readFileSync("../config.json", "utf8"));
 // Used for Permission Resolving...
 const Discord = require("discord.js");
-const mconfig = require("../config js");
+const mconfig = require("../main.json");
 // Express Session
 const express = require("express");
 const app = express();
